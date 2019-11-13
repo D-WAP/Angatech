@@ -538,8 +538,7 @@ var eyecanBackground = {
     var message = function() {
       alert(
         "eyecan' chrome extension has encountered a problem.\n\n" +
-        "Please restart chrome.\n\n" +
-        "If you experience frequent issues please email talk@eyecangaze.com so we can help fix the problem.");
+        "Please restart chrome.\n\n");
 
       // The user saw the alert and closed it. So we know the crash wasn't during
       // shutdown/sleep/hibernate.
