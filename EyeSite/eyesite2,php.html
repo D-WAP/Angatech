@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+	  <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	  <meta http-equiv="Access-Control-Allow-Origin" content="*">
+     
+       <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+      <title>EYE-SITE</title>
+         <link rel="stylesheet" type="text/css" href="styleNiEyesite.css">
+   </head>
+   <body>
+   
+
+ 	
+ 	 	 <form action="" method="get">
+<br>
+    <div class="col-md-2 col-sm-3 col-xs-6" style="margin-left: 20px;" > <a href="newHomepage.php" class="btn btn-sm animated-button victoria-two"><img src="home.png" height="150"><br>HOME</a></div>
+    <div>
+    <div class="col-md-5 col-sm-3 col-xs-6" style="margin-left: 270px; margin-top: 180px" > <a href="#" class="btn btn-sm animated-button victoria-two" id="D1-on" style="height:300px"><img src="arrowup.png" height="250"><br>FORWARD</a> </div>
+    <br>
+	 <div class="col-md-4 col-sm-3 col-xs-6" style="margin-left: 50px;" > <a href="#" class="btn btn-sm animated-button victoria-two" id="LEFT" style="height:300px"><img src="arrowleft.png" height="250"><br>LEFT</a> </div>
+
+    <div class="col-md-3 col-sm-3 col-xs-6" style="margin-left: 45px;" > <a href="#" class="btn btn-sm animated-button victoria-three" id="D1-off" ><img src="stop.png" height="250"><br>STOP</a> </div>
+	 	 <div class="col-md-4 col-sm-3 col-xs-6" style="margin-left: 30px;"> <a href="#" class="btn btn-sm animated-button victoria-two" id="RIGHT" style="height:300px"><img src="arrowright.png" height="250"><br>RIGHT</a> </div>
+    <div class="separator"></div>
+    <div class="col-md-5 col-sm-3 col-xs-6" style="margin-left: 650px;" > <a href="#" class="btn btn-sm animated-button victoria-four" id="D2-on" style="height:300px"><img src="arrowdown.png" height="250"><br>BACKWARD</a> </div>
+    <div class="separator3"></div>
+			  <input type="text" id="ip" class="ip" placeholder="Paste Your IP" style="margin-left: 570px; margin-top: 10px;" value="192.168.43.11" hidden="true"></input><br>
+	
+        </form>
+		<br><br>
+	 </div>
+	</div>
+	
+
+
+    </body>
+    
+	<script>
+		document.getElementById('D1-on').addEventListener('click', function() {
+				var ip = document.getElementById('ip').value;
+				var url = "http://"+ ip + "/D1/1"
+				var settings = {
+				"async": true,
+				"crossDomain": true,
+				"url": url,
+				"method": "GET",
+				"headers": {
+					"cache-control": "no-cache",
+					'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+					
+					}
+				}
+				$.ajax(settings).done(function (response) {
+				});
+		});
+		document.getElementById('LEFT').addEventListener('click', function() {
+				var ip = document.getElementById('ip').value;
+				var url = "http://"+ ip + "/D3/1"
+				var settings = {
+				"async": true,
+				"crossDomain": true,
+				"url": url,
+				"method": "GET",
+				"headers": {
+					"cache-control": "no-cache",
+					'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+					
+					}
+				}
+				$.ajax(settings).done(function (response) {
+				});
+		});
+		
+
+		document.getElementById('RIGHT').addEventListener('click', function() {
+				var ip = document.getElementById('ip').value;
+				var url = "http://"+ ip + "/D3/0"
+				var settings = {
+				"async": true,
+				"crossDomain": true,
+				"url": url,
+				"method": "GET",
+				"headers": {
+					"cache-control": "no-cache",
+					'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+					
+					}
+				}
+				$.ajax(settings).done(function (response) {
+				});
+		});
+
+		document.getElementById('D1-off').addEventListener('click', function() {
+				var ip = document.getElementById('ip').value;
+				var url = "http://"+ ip + "/D1/0"
+				var settings = {
+				"async": true,
+				"crossDomain": true,
+				"url": url,
+				"method": "GET",
+				"headers": {
+					"cache-control": "no-cache",
+					'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+					
+					}
+				}
+				$.ajax(settings).done(function (response) {
+				});
+		});
+		
+		
+
+
+		document.getElementById('D2-on').addEventListener('click', function() {
+				var ip = document.getElementById('ip').value;
+				var url = "http://"+ ip + "/D2/1"
+				var settings = {
+				"async": true,
+				"crossDomain": true,
+				"url": url,
+				"method": "GET",
+				"headers": {
+					"cache-control": "no-cache",
+					'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+					
+					}
+				}
+				$.ajax(settings).done(function (response) {
+				});
+		});
+		
+		document.getElementById('D2-off').addEventListener('click', function() {
+				var ip = document.getElementById('ip').value;
+				var url = "http://"+ ip + "/D2/0"
+				var settings = {
+				"async": true,
+				"crossDomain": true,
+				"url": url,
+				"method": "GET",
+				"headers": {
+					"cache-control": "no-cache",
+					'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+					
+					}
+				}
+				$.ajax(settings).done(function (response) {
+					console.log(response);
+				});
+		});
+		
+		
+	</script>
+</html>
