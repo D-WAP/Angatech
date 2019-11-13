@@ -1,0 +1,40 @@
+{
+   "background": {
+      "page": "background.html",
+      "persistent": true
+   },
+   "browser_action": {
+      "default_icon": {
+         "128": "x_128.png",
+         "16": "x_16.png",
+         "19": "x_19.png",
+         "38": "x_38.png"
+      },
+      "default_popup": "popup.html",
+      "default_title": "Eye Can"
+   },
+   "content_scripts": [ {
+      "js": [ "run_at_document_start.js" ],
+      "matches": [ "file://*/*", "https://*/*", "http://*/*" ],
+      "run_at": "document_start"
+   }, {
+      "js": [ "util.js", "coord.js", "timer.js", "errors.js", "head.js", "mouse.js", "learning.js", "camera.js", "preview.js", "calib.js", "truth.js", "training.js", "content_script.js" ],
+      "matches": [ "file://*/*", "https://*/*", "http://*/*" ]
+   } ],
+   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+   "icons": {
+      "128": "x_128.png",
+      "16": "x_16.png",
+      "19": "x_19.png",
+      "38": "x_38.png"
+   },
+   "incognito": "split",
+   "manifest_version": 2,
+   "name": "Eye Can",
+   "options_page": "options.html",
+   "permissions": [ "storage", "unlimitedStorage", "webRequest", "https://www.eyecangaze.com/", "https://*/*", "http://*/*" ],
+   "short_name": "eyecan",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.6.1",
+   "web_accessible_resources": [ "no_frame.jpg", "options.css", "eyecan_white.png", "env_bad_back.png", "env_bad_dark.png", "env_bad_side.png", "env_ok_day.png", "env_ok_night.png", "gaze.jpg", "extension_button.png" ]
+}
